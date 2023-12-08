@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const Todo = ({ todo, onToggle, onDelete, onRename }) => {

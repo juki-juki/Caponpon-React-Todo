@@ -1,4 +1,4 @@
-// src/App.js
+
 import React, { useState } from 'react';
 import TodoList from './Todolist';
 
@@ -63,12 +63,31 @@ const App = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8 p-4 bg-gray-100 rounded">
-      <h1 className="text-2xl font-bold mb-4">Todo List</h1>
+    <div className="max-w-md mx-auto mt-8 p-4 bg-white shadow-lg rounded-lg">
+      <h1 className="text-3xl font-bold mb-4 text-gray-800">Todo List</h1>
       <div className="mb-4">
-        <progress className="w-full" value={calculateProgress()} max="100">
-          {calculateProgress()}%
-        </progress>
+        <div className="relative pt-1">
+          <div className="flex mb-2 items-center justify-between">
+            <div>
+              <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-600 bg-teal-200">
+                Progress
+              </span>
+            </div>
+            <div className="text-right">
+              <span className="text-xs font-semibold inline-block text-teal-600">
+                {calculateProgress()}%
+              </span>
+            </div>
+          </div>
+          <div className="flex mb-2">
+            <div className="w-full bg-gray-200 rounded-full">
+              <div
+                className="w-full h-2 bg-teal-600 rounded-full"
+                style={{ width: `${calculateProgress()}%` }}
+              ></div>
+            </div>
+          </div>
+        </div>
       </div>
       <TodoList
         todos={todos}
@@ -80,16 +99,16 @@ const App = () => {
         <input
           type="text"
           placeholder="Task name"
-          className="p-2 border rounded mb-2"
+          className="p-2 border rounded mb-2 w-full"
         />
         <input
           type="date"
           placeholder="Due date"
-          className="p-2 border rounded mb-2"
+          className="p-2 border rounded mb-2 w-full"
         />
         <textarea
           placeholder="Task description"
-          className="p-2 border rounded mb-2"
+          className="p-2 border rounded mb-2 w-full"
         ></textarea>
         <button
           onClick={() => {
@@ -102,17 +121,15 @@ const App = () => {
             const dueDate = dueDateInput.value.trim();
             const description = descriptionInput.value.trim();
 
-            // Check if name is not empty
             if (name) {
               handleAdd(name, dueDate, description);
 
-              // Clear input fields
               nameInput.value = '';
               dueDateInput.value = '';
               descriptionInput.value = '';
             }
           }}
-          className="p-2 bg-blue-500 text-white rounded"
+          className="p-2 bg-blue-500 text-white rounded w-full"
         >
           Add Task
         </button>

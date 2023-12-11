@@ -112,7 +112,7 @@ const App = () => {
         ></textarea>
         <button
           onClick={() => {
-            // Extract values from input fields
+          
             const nameInput = document.querySelector('input[placeholder="Task name"]');
             const dueDateInput = document.querySelector('input[placeholder="Due date"]');
             const descriptionInput = document.querySelector('textarea[placeholder="Task description"]');

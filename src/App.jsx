@@ -9,14 +9,14 @@ const App = () => {
       text: 'Learn React',
       completed: false,
       dueDate: '2023-12-31',
-      description: 'Start learning React for web development.',
+      description: 'Refresher',
     },
     {
       id: 2,
       text: 'Build a Todo app',
       completed: true,
       dueDate: '2023-12-15',
-      description: 'Create a simple Todo app using React.',
+      description: 'Submission Dec 11, 7PM.',
     },
   ]);
 

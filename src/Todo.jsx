@@ -1,4 +1,3 @@
-// src/Todo.js
 import React, { useState } from 'react';
 import { PencilIcon, TrashIcon } from '@heroicons/react/outline';
 
